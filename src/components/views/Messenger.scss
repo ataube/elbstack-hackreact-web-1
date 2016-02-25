@@ -1,0 +1,32 @@
+@import "../../theme/variables";
+
+.container {
+  display: flex;
+  align-items: strech;
+  height: 100vh;
+}
+.nav {
+  width: 250px;
+  background: $base-color-dark;
+}
+.chat {
+  position: relative;
+  flex-grow: 1;
+  background: $background-light;
+  color: $text-dark;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.intro {
+  color: $text-light;
+}
+.heading {
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  font-size: 20px;
+  padding: 0 0 75px 0;
+  background: url('../../../static/images/img-empty.svg') bottom center no-repeat;
+}

@@ -2,7 +2,7 @@ import React from 'react'
 import {IndexRoute, Route} from 'react-router'
 import App from 'components/containers/App'
 import Home from 'components/views/Home'
-import Page2 from 'components/views/Page2'
+import Messenger from 'components/views/Messenger'
 import NotFound from 'components/views/NotFound'
 
 export default () => {
@@ -15,7 +15,7 @@ export default () => {
       { /* Home (main) route */ }
       <IndexRoute component={Home}/>
 
-      <Route path="/page2" component={Page2} />
+      <Route path="/messenger" component={Messenger} />
 
       { /* Catch all route */ }
       <Route path="*" component={NotFound} status={404} />

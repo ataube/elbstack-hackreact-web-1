@@ -1,9 +1,12 @@
 import { combineReducers } from 'redux'
-import { routerStateReducer } from 'redux-router'
-
+import { routerStateReducer as router } from 'redux-router'
+import sendbird from './sendbird'
 import language from './language'
+import channels from './channels'
 
 export default combineReducers({
-  router: routerStateReducer,
+  router,
+  sendbird,
+  channels,
   language
 })

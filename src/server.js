@@ -70,6 +70,11 @@ app.use((req, res) => {
     language: {
       messages: langvars,
       countryCode: localeIdentifier === 'de' ? 'de' : 'en'
+    },
+    sendbird: {
+      connected: false,
+      connecting: false,
+      app_id: config.sendbird.app_id
     }
   }
 
@@ -105,7 +110,7 @@ app.use((req, res) => {
       store.getState().router.then(() => {
         const component = (
           <Provider store={store} key="provider">
-            <ReduxRouter/>
+            <ReduxRouter />
           </Provider>
         )
 

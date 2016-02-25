@@ -9,7 +9,7 @@ const environment = {
   }
 }[process.env.NODE_ENV || 'development']
 
-const titleText = 'elbstack hackreact web'
+const titleText = 'hackreact web'
 const descText = titleText + ' - kickoff'
 
 module.exports = Object.assign({
@@ -27,5 +27,8 @@ module.exports = Object.assign({
         'og:locale': 'de_DE'
       }
     }
+  },
+  sendbird: {
+    app_id: process.env.SENDBIRD_APP_ID
   }
 }, environment)
