@@ -1,6 +1,9 @@
 # elbstack hackreact web
 
-The boilerplate for the hackreact web app is based on [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example).
+The boilerplate for the hackreact web app is heavily based on 
+
+- [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example).
+- [web-sendbird-sample](https://github.com/smilefam/sendbird-sample)
 
 ---
 
