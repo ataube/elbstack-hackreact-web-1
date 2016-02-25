@@ -16,9 +16,6 @@ export default class App extends Component {
     language: PropTypes.object
   }
 
-  state = {
-  }
-
   render() {
     return (
       <IntlProvider messages={this.props.language.messages}>
