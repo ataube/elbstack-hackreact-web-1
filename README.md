@@ -2,8 +2,16 @@
 
 The boilerplate for the hackreact web app is heavily based on 
 
-- [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example).
+- [react-redux-universal-hot-example](https://github.com/erikras/react-redux-universal-hot-example)
 - [web-sendbird-sample](https://github.com/smilefam/sendbird-sample)
+
+## quickstart
+
+Setup with `npm install`
+
+Add SENDBIRD_APP_ID to your env (depends on the shell) e.g. `export SENDBIRD_APP_ID=...`
+
+Run development server with `npm run dev`
 
 ---
 
