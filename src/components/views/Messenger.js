@@ -4,6 +4,7 @@ import i18n from '../../utils/i18n'
 import Profile from '../elements/Profile'
 import ListChannelsBtn from '../elements/ListChannelsBtn'
 import ChannelList from '../elements/ChannelList'
+import JoinedChannelList from '../elements/JoinedChannelList'
 import TeamLogo from '../elements/TeamLogo'
 import styles from './Messenger.scss'
 
@@ -34,6 +35,7 @@ export default class Messenger extends Component {
           <TeamLogo />
           <Profile username={this.props.sendbird.user_name}/>
           <ListChannelsBtn onClick={this.onOpenChannels.bind(this)}/>
+          <JoinedChannelList />
         </div>
         <div className={styles.chat}>
           { channelList }

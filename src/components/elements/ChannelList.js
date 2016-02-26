@@ -1,14 +1,15 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import styles from './ChannelList.scss'
-import { listChannels } from '../../redux/actions/channels'
+import { listChannels, joinChannel } from '../../redux/actions/channels'
 
 @connect(
   state => ({
     channels: state.channels
   }),
   dispatch => ({
-    listChannels: () => dispatch(listChannels())
+    listChannels: () => dispatch(listChannels()),
+    joinChannel: (channelId) => dispatch(joinChannel(channelId))
   })
 )
 export default class ChannelList extends Component {
@@ -17,17 +18,23 @@ export default class ChannelList extends Component {
     this.props.listChannels()
   }
 
+  onJoin(channelId) {
+    this.props.joinChannel(channelId)
+  }
+
   renderList() {
-    return this.props.channels.list.map((channel) =>
-      <div key={channel.id} className={styles.item}>
-        {channel.name}
+    const list = this.props.channels.list
+
+    return Object.keys(list).map((id) =>
+      <div key={id} className={styles.item} onClick={this.onJoin.bind(this, id)}>
+        {list[id].name}
       </div>
     )
   }
 
   render() {
 
-    const content = Array.isArray(this.props.channels.list) ? this.renderList() : <span>Lade Channels</span>
+    const content = this.props.channels.list ? this.renderList() : <span>Lade Channels</span>
 
     return (
       <div className={styles.container}>
