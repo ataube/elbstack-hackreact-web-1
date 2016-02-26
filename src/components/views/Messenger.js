@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import i18n from '../../utils/i18n'
-import Nav from '../elements/Nav'
+import Profile from '../elements/Profile'
 import ListChannels from '../containers/ListChannels'
 import ChannelList from '../elements/ChannelList'
 import styles from './Messenger.scss'
@@ -20,7 +20,7 @@ export default class Messenger extends Component {
     return (
       <div className={styles.container}>
         <div className={styles.nav}>
-          <Nav username={this.props.sendbird.user_name} />
+          <Profile />
           <ListChannels />
         </div>
         <div className={styles.chat}>
