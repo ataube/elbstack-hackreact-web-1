@@ -14,6 +14,7 @@ import createStore from './redux/create'
 import ApiClient from './helpers/ApiClient'
 import {Provider} from 'react-redux'
 import {reduxReactRouter, ReduxRouter} from 'redux-router'
+import sendbird from 'sendbird'
 
 import getRoutes from './routes'
 import makeRouteHooksSafe from './helpers/makeRouteHooksSafe'
@@ -29,6 +30,13 @@ const dest = document.getElementById('content')
 const initialState = window.__data
 
 const store = createStore(reduxReactRouter, makeRouteHooksSafe(getRoutes), scrollableHistory, client, initialState)
+
+sendbird.events.onMessageReceived = function eventLog(obj) {
+  store.dispatch({
+    type: 'TEST',
+    payload: obj
+  })
+}
 
 const component = (
   <ReduxRouter routes={getRoutes(store)} />
