@@ -29,7 +29,6 @@ function requestConnect(appId, id, user) {
         dispatch({
           type: SENDBIRD_CONNECTED
         })
-
       },
       errorFunc: function initError(status, error) {
         dispatch({

@@ -22,7 +22,7 @@ export default class Messenger extends Component {
       <div className={styles.container}>
         <div className={styles.nav}>
           <TeamLogo />
-          <Profile />
+          <Profile username={this.props.sendbird.user_name}/>
           <ListChannels />
         </div>
         <div className={styles.chat}>
