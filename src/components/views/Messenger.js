@@ -2,28 +2,38 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import i18n from '../../utils/i18n'
 import Profile from '../elements/Profile'
-import ListChannels from '../containers/ListChannels'
+import ListChannelsBtn from '../elements/ListChannelsBtn'
 import ChannelList from '../elements/ChannelList'
 import TeamLogo from '../elements/TeamLogo'
 import styles from './Messenger.scss'
 
 @connect(
   state => ({
-    sendbird: state.sendbird,
-    channels: state.channels
+    sendbird: state.sendbird
   })
 )
 export default class Messenger extends Component {
+
+  state = {
+    channelListOpen: false
+  }
+
+  onOpenChannels() {
+    this.setState({
+      channelListOpen: !this.state.channelListOpen
+    })
+  }
+
   render() {
 
-    const channelList = this.props.channels.list ? <ChannelList channels={this.props.channels.list} /> : null
+    const channelList = this.state.channelListOpen ? <ChannelList /> : null
 
     return (
       <div className={styles.container}>
         <div className={styles.nav}>
           <TeamLogo />
           <Profile username={this.props.sendbird.user_name}/>
-          <ListChannels />
+          <ListChannelsBtn onClick={this.onOpenChannels.bind(this)}/>
         </div>
         <div className={styles.chat}>
           { channelList }
