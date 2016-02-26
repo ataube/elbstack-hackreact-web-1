@@ -1,4 +1,4 @@
-import { SENDBIRD_CONNECT, SENDBIRD_CONNECT_ERROR, SENDBIRD_CONNECTED, SENDBIRD_SET_USER, } from '../actionTypes'
+import { SENDBIRD_CONNECT, SENDBIRD_CONNECT_ERROR, SENDBIRD_CONNECTED, SENDBIRD_SET_USER } from '../actionTypes'
 import sendbird from 'sendbird'
 import uuid from 'node-uuid'
 
@@ -14,6 +14,8 @@ function requestConnect(appId, id, user) {
       guest_id: id,
       user_name: user
     })
+
+    localStorage.setItem('sendbird.user_name', user)
 
     dispatch({
       type: SENDBIRD_CONNECT
